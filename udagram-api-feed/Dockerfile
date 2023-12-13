@@ -6,7 +6,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Set NODE_OPTIONS environment variable
-ENV NODE_OPTIONS="--max_old_space_size=2048"
+# ENV NODE_OPTIONS="--max_old_space_size=2048"
 
 RUN npm ci 
 ## Bundle app source
