@@ -19,13 +19,13 @@ jobs:
             docker tag udagram-api-user minhtue37/udagram-api-user:v0
             docker build -t udagram-frontend ./udagram-frontend
             docker tag udagram-frontend minhtue37/udagram-frontend:v0
-            docker build -t udagram-reverseproxy ./udagram-reverseproxy
-            docker tag udagram-reverseproxy minhtue37/udagram-reverseproxy:v0
+            docker build -t udagram-reverseproxy:v1 ./udagram-reverseproxy
+            docker tag udagram-reverseproxy:v1 minhtue37/udagram-reverseproxy:v1
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
             docker push minhtue37/udagram-api-feed:v0
             docker push minhtue37/udagram-api-user:v0
             docker push minhtue37/udagram-frontend:v0
-            docker push minhtue37/udagram-reverseproxy:v0
+            docker push minhtue37/udagram-reverseproxy:v1
 workflows:
   default:
     jobs:
